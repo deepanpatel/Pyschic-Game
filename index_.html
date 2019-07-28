@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Pyschic Game</title>
+</head>
+<body>
 
+<div id="game">
+    <p>Press a, b, c, or d to start playing!</p>
+</div>
+<!-- // The app picks a letter.
+    // The user has to guess the letter correctly.
+    //
+-->   
+
+
+<script type="text/javascript">
+
+var letterOptions = ["a", "b", "c", "d"];
+var wins = 0;
+var losses = 0;
+    
+    document.onkeyup = function() {
+        var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+
+        
+
+        var computerChoice = letterOptions[Math.floor(Math.random()*letterOptions.length)];
+
+        
+
+        if (userguess== 'a' || userguess== 'b' || userguess=='c' || userguess=='d') {
+            if ((userguess=='a') && (computerChoice='a')) {
+                wins++;
+                
+            }
+            if ((userguess=='a') && (computerChoice='b')) {
+                losses++;
+                
+            }
+            if ((userguess=='a') && (computerChoice='c')) {
+                losses++;
+
+            }
+            if ((userguess=='a') && (computerChoice='d')) {
+                losses++;
+                
+            }
+            if ((userguess=='b') && (computerChoice='a')) {
+                losses++;
+                
+            }
+            if ((userguess=='b') && (computerChoice='b')) {
+                wins++;
+                
+            }
+            if ((userguess=='b') && (computerChoice='c')) {
+                losses++;
+            }
+            if ((userguess=='b') && (computerChoice='d')) {
+                losses++;
+                
+            }
+            if ((userguess=='c') && (computerChoice='a')) {
+                losses++;
+               
+            }
+            if ((userguess=='c') && (computerChoice='b')) {
+                losses++;
+                
+            }
+            if ((userguess=='c') && (computerChoice='c')) {
+                wins++;
+            }
+            if ((userguess=='c') && (computerChoice='d')) {
+                losses++;
+
+            }
+            if ((userguess=='d') && (computerChoice='a')) {
+                losses++;
+                
+            }
+            if ((userguess=='d') && (computerChoice='b')) {
+                losses++;
+                
+            }
+            if ((userguess=='d') && (computerChoice='c')) {
+                losses++;
+                
+            }
+            if ((userguess=='d') && (computerChoice='d')) {
+                wins++;
+                
+            }
+        } else {
+            alert("Please choose a, b, c, or d");
+        }
+
+        var html = "<p> Press a, b, c, or d to start playing!</p>" +
+        "<p>wins: " + wins + "</p>" +
+        "<p>losses: " + losses + "</p>";
+
+        document.querySelector('#game').innerHTML = html;
+    }
+
+</script>
+
+</body>
+</html>
